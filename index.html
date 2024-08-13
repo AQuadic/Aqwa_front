@@ -41,52 +41,31 @@
             width: 100%;
         }
 
+        .slider:before {
+        position: absolute;
+        content: "";
+        height: 1.4em;
+        width: 1.4em;
+        border-radius: 20px;
+        left: 0.27em;
+        bottom: 0.25em;
+        background-color: #adb5bd;
+        transition: .4s;
+        }
 
-    .theme-checkbox {
-    --toggle-size: 16px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 3.5em;
-    height: 1.6em;
-    background: white ;
-    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
-    background-size: 205%;
-    background-position: 0;
-    -webkit-transition: 0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 99em;
-    position: relative;
-    cursor: pointer;
-    font-size: var(--toggle-size);
-    }
+        input:checked + .slider {
+        background-color: #007bff;
+        border: 1px solid #007bff;
+        }
 
-    .theme-checkbox::before {
-    content: "";
-    width: 1.25em;
-    height: 1.25em;
-    position: absolute;
-    top: 0.1em;
-    left: 0.1em;
-    background: gray no-repeat;
-    background: linear-gradient(to right, #efefef 50%, #afadad 50%) no-repeat;
-    background-size: 205%;
-    background-position: 100%;
-    border-radius: 50%;
-    -webkit-transition: 0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s;
-    }
+        input:focus + .slider {
+        box-shadow: 0 0 1px #007bff;
+        }
 
-    .theme-checkbox:checked::before {
-    left: calc(100% - 2.25em - 0.438em);
-    background-position: 0;
-    }
-
-    .theme-checkbox:checked {
-    background-position: 100%;
-    }
+        input:checked + .slider:before {
+        transform: translateX(1.4em);
+        background-color: #fff;
+        }
     
     </style>
 </head>
@@ -547,15 +526,18 @@
                 <div class="flex text-center justify-center">
                     <div class="">
                         <h2 class="font-bold text-4xl pb-5">Pricing</h2>
-                        <p class="text-[#737373] pb-5">Problems trying to resolve the conflict between <br> the two major realms of Classical physics: Newtonian mechanics </p>
+                        <p class="pb-5 font-normal " style="color: #737373;">Problems trying to resolve the conflict between <br> the two major realms of Classical physics: Newtonian mechanics </p>
                     </div>
                 </div>
                     <!-- Icon -->
                     <div class="flex items-center justify-center gap-4">
                         <span>Monthly</span>
-                        <input type="checkbox" class="theme-checkbox">
+                        <label class="switch inline-block relative w-14 h-8">
+                            <input type="checkbox" class="opacity-0 w-0 h-0 absolute">
+                            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-white border  rounded-full transition-all duration-300" style="border:1px solid  #23A6F0"></span>
+                        </label>
                         <span>Yearly</span>
-                        <button class="rounded-3xl bg-blue-300" style="width: 109px; height: 44px;">Save 25%</button>
+                        <button class="rounded-3xl" style="width: 109px; height: 44px; background-color:#B2E3FF;">Save 25%</button>
                     </div>
 
                     <!-- Card -->
