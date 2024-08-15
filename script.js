@@ -1,3 +1,4 @@
+//Toggle
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('navbar-toggle');
     const menuItems = document.getElementById('navbar-sticky');
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Slider
 document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.getElementById('carousel');
     const images = Array.from(carousel.getElementsByClassName('carousel-image'));
@@ -49,14 +51,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('nextBtn');
 
     prevBtn.addEventListener('click', () => {
-        clearInterval(autoSlideInterval); 
+        clearInterval(autoSlideInterval);
         updateCarousel(currentIndex - 1);
-        autoSlideInterval = setInterval(autoSlide, slideInterval); 
+        autoSlideInterval = setInterval(autoSlide, slideInterval);
     });
 
     nextBtn.addEventListener('click', () => {
-        clearInterval(autoSlideInterval); 
+        clearInterval(autoSlideInterval);
         updateCarousel(currentIndex + 1);
-        autoSlideInterval = setInterval(autoSlide, slideInterval); 
+        autoSlideInterval = setInterval(autoSlide, slideInterval);
     });
+
+// Responsive
+    function handleResize() {
+        containerWidth = carousel.parentElement.clientWidth;
+        centerOffset = (containerWidth - imageWidth) / 2;
+        updateCarousel(currentIndex);
+    }
+
+    window.addEventListener('resize', handleResize);
+});
+
+// Accordion
+document.addEventListener('DOMContentLoaded', function () {
+    const headers = document.querySelectorAll('.accordion');
+    headers.forEach(header => {
+    header.addEventListener('click', () => {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('svg');
+
+    if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        content.classList.add('visible');
+        icon.classList.add('rotate-180');
+    } else {
+        content.classList.remove('visible');
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+    }
+    });
+});
 });

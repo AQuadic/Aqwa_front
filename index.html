@@ -41,6 +41,23 @@
             width: 100%;
         }
 
+        .carousel-image {
+            max-width: 170%; 
+            display: block;
+            margin: auto ;
+}
+
+
+@media (max-width: 640px) {
+    .carousel-image {
+        display: none; 
+    }
+    .carousel-image.active {
+        display: block; 
+    }
+}
+
+
         .slider:before {
         position: absolute;
         content: "";
@@ -72,89 +89,90 @@
 
 <body class=" dark:bg-gray-900">
 
-<div >
+    <div class=" mx-auto">
         <!-- Start Navbar --> 
-        <nav class="bg-white dark:bg-gray-900 w-full z-50 top-0 start-0 border-b border-gray-200 dark:border-gray-600 sticky">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <!-- LOGO -->
-                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-blue-600">AQWA</span>
-                </a>
-        
-                <div class="flex justify-center items-center gap-5 md:order-2">
-                    <ul class="hidden md:flex">
-                        <li>
-                            <a href="#" class="block py-2 px-3 text-blue-600 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-semibold">Log In</a>
-                        </li>
-                    </ul>
-        
-                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
-                    <button id="navbar-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-                        </svg>
-                    </button>
+            <nav class="bg-white dark:bg-gray-900 w-full z-50 top-0 start-0 border-b border-gray-200 dark:border-gray-600 sticky container mx-auto">
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                    <!-- LOGO -->
+                    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-blue-600">AQWA</span>
+                    </a>
+            
+                    <div class="flex justify-center items-center gap-5 md:order-2">
+                        <ul class="hidden md:flex">
+                            <li>
+                                <a href="#" class="block py-2 px-3 text-blue-600 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-semibold">Log In</a>
+                            </li>
+                        </ul>
+            
+                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
+                        <button id="navbar-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        </button>
+                    </div>
+            
+                    <div id="navbar-sticky" class="hidden w-full md:flex md:w-auto md:order-1">
+                        <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                            <li class="relative group">
+                                <a href="#" class="flex py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent items-center">Products <i class="fa-solid fa-caret-down ml-1"></i></a>
+                                <div class="absolute hidden group-hover:block bg-white dark:bg-gray-700 shadow-lg mt-2 rounded-lg z-10" style="width: 105px;">
+                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Product 1</a>
+                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Product 2</a>
+                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Product 3</a>
+                                </div>
+                            </li>
+                            <li class="relative group">
+                                <a href="#" class="flex py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent items-center">Business Solutions <i class="fa-solid fa-caret-down ml-1"></i></a>
+                                <div class="absolute hidden group-hover:block bg-white dark:bg-gray-700 shadow-lg mt-2 rounded-lg z-10">
+                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Solution 1</a>
+                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Solution 2</a>
+                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Solution 3</a>
+                                </div>
+                            </li>
+                            <li class="relative group">
+                                <a href="#" class="py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent flex items-center">Help Center <i class="fa-solid fa-caret-down ml-1"></i></a>
+                                <div class="absolute hidden group-hover:block bg-white dark:bg-gray-700 shadow-lg mt-2 rounded-lg z-10">
+                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Help</a>
+                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">FAQ</a>
+                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Support</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-        
-                <div id="navbar-sticky" class="hidden w-full md:flex md:w-auto md:order-1">
-                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                        <li class="relative group">
-                            <a href="#" class="flex py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent items-center">Products <i class="fa-solid fa-caret-down ml-1"></i></a>
-                            <div class="absolute hidden group-hover:block bg-white dark:bg-gray-700 shadow-lg mt-2 rounded-lg z-10" style="width: 105px;">
-                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Product 1</a>
-                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Product 2</a>
-                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Product 3</a>
-                            </div>
-                        </li>
-                        <li class="relative group">
-                            <a href="#" class="flex py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent items-center">Business Solutions <i class="fa-solid fa-caret-down ml-1"></i></a>
-                            <div class="absolute hidden group-hover:block bg-white dark:bg-gray-700 shadow-lg mt-2 rounded-lg z-10">
-                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Solution 1</a>
-                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Solution 2</a>
-                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Solution 3</a>
-                            </div>
-                        </li>
-                        <li class="relative group">
-                            <a href="#" class="py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent flex items-center">Help Center <i class="fa-solid fa-caret-down ml-1"></i></a>
-                            <div class="absolute hidden group-hover:block bg-white dark:bg-gray-700 shadow-lg mt-2 rounded-lg z-10">
-                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Help</a>
-                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">FAQ</a>
-                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Support</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>        
+            </nav>        
         <!-- End Navbar -->
 
         <!-- Start Header Section -->
-        <div class="lg:flex justify-center items-center mx-auto max-w-screen-xl px-4 py-16 h-[265px]">
-            <!-- First Section -->
-            <div class="lg:w-1/2">
-                <h1 class="text-7xl lg:text-7xl font-bold lg:text-left mb-6 dark:text-white">Building apps just got easier</h1>
-                <p class="lg:text-left  dark:text-white lg:w-[507px] text-gray-700">Aliquam vel platea curabitur sit vestibulum egestas sit id lorem. Aliquet neque, dui sed eget scelerisque. Non at at venenatis tortor amet feugiat ullamcorper in. Odio vulputate cras vel lacinia turpis volutpat adipiscing. Sollicitudin at velit, blandit tempus nunc in.</p>
-                <div class="flex flex-col lg:flex-row lg:items-center lg:gap-8 mt-6 lg:justify-start">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 lg:mb-0 lg:mr-4 dark:bg-blue-600 dark:hover:bg-blue-700">Get started</button>
-                    <div class="flex items-center gap-2 justify-center lg:justify-start">
-                        <i class="fa-solid fa-play text-blue-600 dark:text-blue-400"></i>
-                        <span class="text-blue-600 cursor-pointer dark:text-blue-400">Watch Video</span>
+            <div class="lg:flex justify-center items-center mx-auto max-w-screen-xl px-4 py-16 h-[265px]">
+                <!-- First Section -->
+                <div class="lg:w-1/2">
+                    <h1 class="text-7xl lg:text-7xl font-bold lg:text-left mb-6 dark:text-white">Building apps just got easier</h1>
+                    <p class="lg:text-left  dark:text-white lg:w-[507px] text-gray-700">Aliquam vel platea curabitur sit vestibulum egestas sit id lorem. Aliquet neque, dui sed eget scelerisque. Non at at venenatis tortor amet feugiat ullamcorper in. Odio vulputate cras vel lacinia turpis volutpat adipiscing. Sollicitudin at velit, blandit tempus nunc in.</p>
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:gap-8 mt-6 lg:justify-start">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 lg:mb-0 lg:mr-4 dark:bg-blue-600 dark:hover:bg-blue-700">Get started</button>
+                        <div class="flex items-center gap-2 justify-center lg:justify-start">
+                            <i class="fa-solid fa-play text-blue-600 dark:text-blue-400"></i>
+                            <span class="text-blue-600 cursor-pointer dark:text-blue-400">Watch Video</span>
+                        </div>
                     </div>
+                </div>    
+                <!-- Photo Section -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <img src="./images/Col1.png" alt="" class="transform transition-transform duration-300 hover:scale-105 cursor-pointer">
                 </div>
-            </div>    
-            <!-- Photo Section -->
-            <div class="lg:w-1/2 flex justify-center">
-                <img src="./images/Col1.png" alt="" class="transform transition-transform duration-300 hover:scale-105 cursor-pointer">
-            </div>
-        </div>       
+            </div>       
         <!-- End Header Section -->
 
         <!-- Start Second Part -->
-            <div class="lg:flex justify-center space-x-4 bg-gradient-to-tl from-gray-50 via-gray-100 to-gray-100 lg:h-64 items-center mb-12 p-10">
+            <div class="lg:flex justify-center space-x-4 lg:h-64 items-center mb-12 p-10" style="background: linear-gradient(180deg, #F1F5F9 0%, rgba(255, 255, 255, 0) 100%);">
+                <div class="container lg:flex">
                 <div class="text-center">
                     <div class="flex items-center justify-center mb-3">
                         <img src="./images/Circle.png" class="relative" alt="">
@@ -189,6 +207,7 @@
                     <p class="mt-2">Quam sed neque vitae viverra purus venenatis ac non. Eget sed nunc, amet, nibh nulla. Morbi sed risus ullamcorper diam, elit ut non.</p>
                 </div>
             </div>
+            </div>
         <!-- End Second Part -->
 
         <!-- Start Third Section -->
@@ -205,15 +224,42 @@
                     <div class="ml-0 md:ml-4"> 
                         <div class="border-l-2 border-blue-500 pl-5">
                             <h1 class="font-semibold mb-2 dark:text-white">Sem augue tempus</h1>
-                            <p class="mb-4 dark:text-white">Venenatis blandit habitasse nunc, sapien enim elit in. Arcu, pharetra, et cursus sit senectus in blandit. Aliquet enim fermentum non semper nibh ut neque. Pellentesque ut tincidunt vitae arcu bibendum malesuada lorem sapien volutpat.</p>
+                            <p class="mb-4 dark:text-white" style="width: 88%;">Venenatis blandit habitasse nunc, sapien enim elit in. Arcu, pharetra, et cursus sit senectus in blandit. Aliquet enim fermentum non semper nibh ut neque. Pellentesque ut tincidunt vitae arcu bibendum malesuada lorem sapien volutpat.</p>
                         </div>
-                        <div class="border-l-2 border-gray-300 pl-5">
-                            <h1 class="font-semibold mb-2 dark:text-white">Habitant integer interdum a</h1>
+                        
+                        <div class="max-w-md">
+                            <div class="mb-4 ">
+                            <div class="accordion  py-1  cursor-pointer ">
+                            <div class="border-l-2 border-gray-400 flex items-center justify-between pl-5 dark:text-white">
+                                <h2 class="font-medium  ">Habitant integer interdum a</h2>
+                                <svg class="w-5 h-5 font-bold transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            </div>
+                            <div class="accordion-content hidden p-4">
+                                <p class="text-gray-700 pl-2">Habitant integer interdum a</p>
+                            </div>
+                            </div>
+                    </div>
+                    
+                    <div class="max-w-md">
+                        <div class="mb-4 ">
+                        <div class="accordion  py-1  cursor-pointer ">
+                        <div class="border-l-2 border-gray-400 flex items-center justify-between pl-5 dark:text-white">
+                            <h2 class="font-medium  ">Tempus natoque id</h2>
+                            <svg class="w-5 h-5 font-bold transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </div>
-                        <div class="border-l-2 border-gray-300 pl-5">
-                            <h1 class="font-semibold mb-2 dark:text-white">Tempus natoque id</h1>
+                        </div>
+                        <div class="accordion-content hidden p-4">
+                            <p class="text-gray-700 pl-2">Tempus natoque id</p>
+                        </div>
                         </div>
                     </div>
+                
+                </div>
                 </div>
             </div>
         <!-- End Third Section -->
@@ -232,26 +278,52 @@
                     <div class="ml-0 md:ml-4"> 
                         <div class="border-l-2 border-blue-500 pl-5">
                             <h1 class="font-semibold mb-2 dark:text-white">Bibendum gravida dolor egestas aliquam</h1>
-                            <p class="mb-4 dark:text-white">Egestas tincidunt hendrerit nibh platea sit vivamus aenean rhoncus etiam. Tristique amet, sed ac ac dolor habitant. Mauris duis neque molestie venenatis nibh hendrerit pharetra. Tortor suscipit leo sit tellus ac scelerisque gravida sem.</p>
+                            <p class="mb-4 dark:text-white" style="width: 88%;">Egestas tincidunt hendrerit nibh platea sit vivamus aenean rhoncus etiam. Tristique amet, sed ac ac dolor habitant. Mauris duis neque molestie venenatis nibh hendrerit pharetra. Tortor suscipit leo sit tellus ac scelerisque gravida sem.</p>
                         </div>
-                        <div class="border-l-2 border-gray-300 pl-5">
-                            <h1 class="font-semibold mb-2 dark:text-white">Egestas lorem eget</h1>
+
+                        <div class="max-w-md">
+                                <div class="mb-4 ">
+                                <div class="accordion  py-1  cursor-pointer ">
+                                <div class="border-l-2 border-gray-400 flex items-center justify-between pl-5 dark:text-white">
+                                    <h2 class="font-medium  ">Egestas lorem eget</h2>
+                                    <svg class="w-5 h-5 font-bold transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                                </div>
+                                <div class="accordion-content hidden p-4">
+                                    <p class="text-gray-700 pl-2">Egestas lorem eget</p>
+                                </div>
+                                </div>
                         </div>
-                        <div class="border-l-2 border-gray-300 pl-5">
-                            <h1 class="font-semibold mb-2 dark:text-white">Tellus eget feugiat sit</h1>
+                        
+                        <div class="max-w-md">
+                            <div class="mb-4 ">
+                            <div class="accordion  py-1  cursor-pointer ">
+                            <div class="border-l-2 border-gray-400 flex items-center justify-between pl-5 dark:text-white">
+                                <h2 class="font-medium  ">Tellus eget feugiat sit</h2>
+                                <svg class="w-5 h-5 font-bold transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            </div>
+                            <div class="accordion-content hidden p-4">
+                                <p class="text-gray-700 pl-2">Tellus eget feugiat sit</p>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             
                 <div class="flex justify-center mt-5">
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 lg:mb-0 lg:mr-4">Get started</button>
-                </div>       
+            </div>       
             </div>
         <!-- End Fourth Section -->
 
         <!-- Start Slider  -->
             <div class="relative w-full bg-gray-50 p-10" data-carousel="slide">
-            <div class="relative h-56 overflow-hidden rounded-lg md:h-96 ml-20">
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96 ml-20 container mx-auto">
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <div class="lg:flex items-center justify-between h-full">
                         <div class="w-1/2">
@@ -333,12 +405,12 @@
         <!-- End Slider -->
 
         <!-- Start Question Part -->
-            <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white" class="pt-5 pb-5">
+            <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white" class="pt-5 pb-5 container mx-auto">
             <!-- Accordion 1 -->
             <h2 id="accordion-color-heading-1">
-                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-1" aria-expanded="false" aria-controls="accordion-color-body-1">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-normal rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl  dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-1" aria-expanded="false" aria-controls="accordion-color-body-1" style="border-right: none; border-left: none;">
                 <span class="text-blue-600">Enim sodales consequat adipiscing facilisis massa venenatis, non lorem lobortis?</span>
-                <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <svg data-accordion-icon class="w-3 h-3 shrink-0 text-blue-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                 </svg>
                 </button>
@@ -351,9 +423,9 @@
 
             <!-- Accordion 2 -->
             <h2 id="accordion-color-heading-2">
-                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-normal rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl  dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2" style="border-right: none; border-left: none;">
                 <span class="text-blue-600">Vivamus ac mauris at elit facilisis viverra.</span>
-                <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <svg data-accordion-icon class="w-3 h-3 shrink-0 text-blue-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                 </svg>
                 </button>
@@ -366,9 +438,9 @@
 
             <!-- Accordion 3 -->
             <h2 id="accordion-color-heading-3">
-                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-normal rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl  dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3" style="border-right: none; border-left: none;">
                 <span class="text-blue-600">Curabitur sit amet justo non urna consectetur ultricies.</span>
-                <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <svg data-accordion-icon class="w-3 h-3 shrink-0 text-blue-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                 </svg>
                 </button>
@@ -381,9 +453,9 @@
 
             <!-- Accordion 4 -->
             <h2 id="accordion-color-heading-4">
-                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-4" aria-expanded="false" aria-controls="accordion-color-body-4">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-normal rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl  dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-4" aria-expanded="false" aria-controls="accordion-color-body-4" style="border-right: none; border-left: none;">
                 <span class="text-blue-600">Pellentesque habitant morbi tristique senectus et netus.</span>
-                <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <svg data-accordion-icon class="w-3 h-3 shrink-0 text-blue-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                 </svg>
                 </button>
@@ -396,9 +468,9 @@
             
             <!-- Accordion 5 -->
             <h2 id="accordion-color-heading-5">
-                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-5" aria-expanded="false" aria-controls="accordion-color-body-5">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-normal rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl  dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-5" aria-expanded="false" aria-controls="accordion-color-body-5" style="border-right: none; border-left: none;">
                 <span class="text-blue-600">Sed nec massa nec nunc tincidunt ultricies.</span>
-                <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <svg data-accordion-icon class="w-3 h-3 shrink-0 text-blue-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                 </svg>
                 </button>
@@ -409,10 +481,11 @@
                 </div>
             </div>
             </div>
-            <!-- End Question Part -->
+        <!-- End Question Part -->
 
         <!-- Start Services -->
-            <div class="lg:flex justify-center items-center mx-auto max-w-screen-xl px-4 py-16 h-[265px] bg-gray-100 ">
+            <div class="lg:flex justify-center items-center mx-auto  px-4 py-16 h-[265px] bg-gray-100 ">
+                <div class="container mx-auto lg:flex items-center justify-center">
                 <!-- First Section -->
                 <div class="lg:w-1/2">
                     <h1 class="text-4xl lg:text-6xl font-bold  lg:text-left mb-6">Start now and get the best services</h1>
@@ -426,89 +499,12 @@
                         <img src="./images/Group 48.png" class="transform transition-transform duration-300 hover:scale-105 cursor-pointer" alt="">
                     </div>
             </div>
+            </div>
         <!-- End Services -->
 
-        <!-- Start Footer -->
-            <div class="p-7" style="color: #475569;">
-                <div class="flex flex-wrap justify-center mb-5 space-y-5 md:space-y-0 md:justify-between lg:justify-between ">
-                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
-                        <span class="font-bold dark:text-white">Categories</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">User Interface</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">User Experience</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Digital Media</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Lifestyle</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Programming</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Animation</span>
-                    </div>
-                    
-                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
-                        <span class="font-bold dark:text-white">Product</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Pricing</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Overview</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Browse</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Accessibility</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Five</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Changelog</span>
-                    </div>
-                    
-                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
-                        <span class="font-bold dark:text-white">Solutions</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Brainstorming</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Ideation</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Wireframing</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Research</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Design</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Concept</span>
-                    </div>
-                    
-                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
-                        <span class="font-bold dark:text-white">Resources</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Help Center</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Blog</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Tutorials</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">FAQs</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Community</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Events</span>
-                    </div>
-                    
-                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
-                        <span class="font-bold dark:text-white">Support</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Contact Us</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Developers</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Documentation</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Integrations</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Reports</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Webinar</span>
-                    </div>
-                    
-                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
-                        <span class="font-bold dark:text-white">Company</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">About</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Press</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Events</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Careers</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Customers</span>
-                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Partners</span>
-                    </div>
-                    
-            </div>
-            <hr>
-            <div class="lg:flex justify-between mt-5 ">
-                <h1 class="font-bold text-[#2563EB]">Appy</h1>
-                <p class="dark:text-white">@ 2023 All rights reserved.</p>
-                <div class="flex gap-3">
-                    <i class="fa-brands fa-youtube cursor-pointer hover:text-blue-600 dark:text-white"></i>
-                    <i class="fa-brands fa-facebook-f cursor-pointer hover:text-blue-600 dark:text-white"></i>
-                    <i class="fa-brands fa-twitter cursor-pointer hover:text-blue-600 dark:text-white"></i>
-                    <i class="fa-brands fa-instagram cursor-pointer hover:text-blue-600 dark:text-white"></i>
-                    <i class="fa-brands fa-linkedin-in cursor-pointer hover:text-blue-600 dark:text-white"></i>
-                </div>
-            </div>
-            </div>
-        <!-- End Footer -->
-
+        
         <!-- Start Second Slider Part -->
-            <div class="px-4 md:px-8 lg:px-16">
+            <div class="px-4 md:px-8 lg:px-16 py-10 container mx-auto">
                 <!-- Content -->
                 <div class="flex justify-center items-center text-center">
                     <div>
@@ -537,7 +533,7 @@
                     </div>
                 
                     <!-- Slider indicators -->
-                    <div class="absolute z-30 flex space-x-3 rtl:space-x-reverse bottom-4 sm:bottom-10 left-1/2 transform -translate-x-1/2" style="bottom: -50px;">
+                    <div class="absolute z-30  space-x-3 rtl:space-x-reverse bottom-4 sm:bottom-10 left-1/2 transform hidden md:flex" style="bottom: -50px; transform:translateX(-87%);">
                         <button type="button" class="w-3 h-3 rounded-full bg-purple-600" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
                         <button type="button" class="w-3 h-3 rounded-full bg-purple-600" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
                         <button type="button" class="w-3 h-3 rounded-full bg-purple-600" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
@@ -556,7 +552,7 @@
         <!-- End Second Slider Part -->
 
         <!-- Start Pricing Section -->
-            <div class="mt-24 bg-gray-50">
+            <div class="mt-24 bg-gray-50 py-10">
                 <!-- Content -->
                 <div class="flex text-center justify-center">
                     <div class="">
@@ -733,6 +729,86 @@
                     
             </div>
         <!-- End Pricing Section -->
+
+        <!-- Start Footer -->
+            <div class="p-7 container mx-auto" style="color: #475569;">
+                <div class="flex flex-wrap justify-center mb-5 space-y-5 md:space-y-0 md:justify-between lg:justify-between ">
+                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
+                        <span class="font-bold dark:text-white">Categories</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">User Interface</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">User Experience</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Digital Media</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Lifestyle</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Programming</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Animation</span>
+                    </div>
+                    
+                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
+                        <span class="font-bold dark:text-white">Product</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Pricing</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Overview</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Browse</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Accessibility</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Five</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Changelog</span>
+                    </div>
+                    
+                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
+                        <span class="font-bold dark:text-white">Solutions</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Brainstorming</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Ideation</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Wireframing</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Research</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Design</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Concept</span>
+                    </div>
+                    
+                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
+                        <span class="font-bold dark:text-white">Resources</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Help Center</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Blog</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Tutorials</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">FAQs</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Community</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Events</span>
+                    </div>
+                    
+                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
+                        <span class="font-bold dark:text-white">Support</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Contact Us</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Developers</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Documentation</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Integrations</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Reports</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Webinar</span>
+                    </div>
+                    
+                    <div class=" sm:w-1/2 lg:w-1/6 p-9 grid text-center md:text-left">
+                        <span class="font-bold dark:text-white">Company</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">About</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Press</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Events</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Careers</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Customers</span>
+                        <span class="item cursor-pointer hover:text-blue-600 dark:text-white">Partners</span>
+                    </div>
+                    
+            </div>
+            <hr>
+            <div class="lg:flex justify-between mt-5 ">
+                <h1 class="font-bold text-[#2563EB]">Appy</h1>
+                <p class="dark:text-white">@ 2023 All rights reserved.</p>
+                <div class="flex gap-3">
+                    <i class="fa-brands fa-youtube cursor-pointer hover:text-blue-600 dark:text-white"></i>
+                    <i class="fa-brands fa-facebook-f cursor-pointer hover:text-blue-600 dark:text-white"></i>
+                    <i class="fa-brands fa-twitter cursor-pointer hover:text-blue-600 dark:text-white"></i>
+                    <i class="fa-brands fa-instagram cursor-pointer hover:text-blue-600 dark:text-white"></i>
+                    <i class="fa-brands fa-linkedin-in cursor-pointer hover:text-blue-600 dark:text-white"></i>
+                </div>
+            </div>
+            </div>
+        <!-- End Footer -->
+
 </div>
 </body>
 </html>
